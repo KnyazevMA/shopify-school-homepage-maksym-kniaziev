@@ -33,7 +33,7 @@
            </picture>
             <span class="product-detail__image-badge">
                 <svg class="header__logo-icon" width="20" height="20" aria-hidden="true">
-                <use xlink:href="/images/sprite.svg#star-icon"></use>
+                <use xlink:href="images/sprite.svg#star-icon"></use>
                 </svg>
                 <span class="product-detail__image-bage-text">Highly Rated</span>
             </span>
