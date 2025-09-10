@@ -1,0 +1,28 @@
+@use "sass:map";
+
+@mixin vp-mobile {
+  @media (max-width: $vp-mobile) {
+    @content;
+  }
+}
+
+@mixin vp-tablet {
+  @media (max-width: $vp-tablet) {
+    @content;
+  }
+}
+
+@mixin vp-desctop {
+  @media (min-width: $vp-desktop) {
+    @content;
+  }
+}
+
+@mixin text-style($key) {
+  $style: map.get($typography, $key);
+
+  font-family: $ff-main;
+  font-size: map.get($style, fs);
+  font-weight: map.get($style, fw);
+  line-height: map.get($style, lh);
+}

@@ -1,0 +1,30 @@
+.btn {
+    width: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: $color-black;
+    color: $color-white;
+    border: none;
+    @include text-style("body-text-large");
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-gray;
+    }
+
+    &--color-white {
+        background-color: $color-white;
+        color: $color-black;
+
+        &:hover {
+            background-color: $color-gray-light;
+        }
+    }
+
+    &--big {
+        width: 100%;
+    }
+}

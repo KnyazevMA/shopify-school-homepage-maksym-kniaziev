@@ -1,0 +1,114 @@
+.feedback {
+    padding: 80px 0 50px 0;
+    background-color: $color-stroke;
+
+    @include vp-tablet {
+        padding: 60px 0 30px 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        @include text-style("h2-desktop");
+        max-width: 800px;
+        margin: 0 0 48px 0;
+
+        @include vp-tablet {
+            margin: 0 0 32px 0;
+        }
+
+        @include vp-mobile {
+            @include text-style("h2-mobile");
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 872px;
+        width: 100%;
+        margin: 0 0 32px 0;
+
+        @media(max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &--flat {
+            grid-column: span 2;
+
+            @media(max-width: 500px) {
+                grid-column: span 1;
+            }
+        }
+    }
+
+    &__label {
+        @include text-style("body-text-large");
+    }
+
+    &__input,
+    &__textarea {
+        @include text-style("body-text-large");
+        color: $color-gray;
+        border: 1px solid $color-stroke;
+        border-radius: 8px;
+        padding: 16px;
+
+        &:focus-visible,
+        &:hover {
+            outline: none;
+            border-color: $color-gray;
+        }
+    }
+
+    &__input[type="number"] {
+        appearance: none;
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &__textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    &__btn {
+        margin: 0 0 15px 0;
+    }
+
+    &__success {
+        margin-top: 12px;
+        font-size: 14px;
+        color: green;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-5px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        margin: 0;
+
+        &.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+/* Fonts */
+/* ------------------------------------ */
+$ff-main: "Poppins", "Arial", sans-serif;
+
+/* Colors */
+/* ------------------------------------ */
+$color-black: #111111;
+$color-black-08: rgba(17, 17, 17, 0.8);
+$color-white: #FFFFFF;
+$color-gray: #737373;
+$color-gray-light: #CACACB;
+$color-stroke: #EBEBEB;
+
+/* Breakpoints */
+/* ------------------------------------ */
+$vp-mobile: 768px;
+$vp-tablet: 1279px;
+$vp-desktop: 1280px;
+
+/* Typography */
+/* ------------------------------------ */
+
+$typography: (
+  "h1-desktop": (fs: 48px, fw: 700, lh: 1),
+  "h1-mobile":  (fs: 30px, fw: 700, lh: 1.2),
+  "h2-desktop": (fs: 30px, fw: 400, lh: 1.2),
+  "h2-mobile":  (fs: 24px, fw: 400, lh: 1.33),
+  "body-text-large": (fs: 16px, fw: 400, lh: 1.5),
+  "body-text-medium":  (fs: 14px, fw: 400, lh: 1.42),
+);

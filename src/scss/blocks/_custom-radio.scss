@@ -1,0 +1,43 @@
+.custom-radio {
+    cursor: pointer;
+
+    &:focus-visible,
+    &:hover {
+
+        .custom-radio__visual {
+            outline: none;
+            border: 1px solid $color-gray;
+        }
+    }
+
+    &__field {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    &__visual {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        border: 1px solid $color-stroke;
+        border-radius: 8px;
+        padding: 16px;
+
+
+        &--img {
+            padding: 0;
+            width: 88px;
+            height: 88px;
+            border: 1px solid $color-black;
+            border-color: transparent;
+        }
+    }
+
+    &__field:checked+&__visual {
+        border-color: $color-black;
+    }
+}

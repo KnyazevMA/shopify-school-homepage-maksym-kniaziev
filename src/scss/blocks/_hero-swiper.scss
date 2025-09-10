@@ -1,0 +1,118 @@
+.hero-swiper {
+    height: calc(100vh - 88px);
+    width: 100%;
+    color: $color-white;
+    margin: 0 0 80px 0;
+
+    @include vp-tablet {
+        margin: 0 0 60px 0;
+        height: calc(100vh - 56px);
+    }
+
+    &__slide {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &--1 {
+            background-image: image-set(url("/images/hero-banner/hero-banner-image-1.webp") type("image/webp") 1x,
+                    url("/images/hero-banner/hero-banner-image-1@2x.webp") type("image/webp") 2x,
+                    url("/images/hero-banner/hero-banner-image-1.jpg") type("image/jpeg") 1x,
+                    url("/images/hero-banner/hero-banner-image-1@2x.jpg") type("image/jpeg") 2x);
+        }
+
+        &--2 {
+            background-image: image-set(url("/images/hero-banner/hero-banner-image-2.webp") type("image/webp") 1x,
+                    url("/images/hero-banner/hero-banner-image-2@2x.webp") type("image/webp") 2x,
+                    url("/images/hero-banner/hero-banner-image-2.jpg") type("image/jpeg") 1x,
+                    url("/images/hero-banner/hero-banner-image-2@2x.jpg") type("image/jpeg") 2x);
+
+        }
+
+        &--3 {
+            background-image: image-set(url("/images/hero-banner/hero-banner-image-3.webp") type("image/webp") 1x,
+                    url("/images/hero-banner/hero-banner-image-3@2x.webp") type("image/webp") 2x,
+                    url("/images/hero-banner/hero-banner-image-3.jpg") type("image/jpeg") 1x,
+                    url("/images/hero-banner/hero-banner-image-3@2x.jpg") type("image/jpeg") 2x);
+
+        }
+    }
+
+    &__inner {
+        max-width: 700px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 0 60px;
+
+        @media (max-width: 550px) {
+            margin: 0;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        @include text-style("h1-desktop");
+        margin: 0 0 16px 0;
+        text-transform: uppercase;
+        max-width: 688px;
+        max-height: 300px;
+        overflow: hidden;
+
+        @include vp-mobile {
+            max-width: 500px;
+            @include text-style("h1-mobile");
+        }
+
+        @media (max-width: 600px) {}
+
+        @media (max-width: 550px) {
+            max-width: 350px;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        @include text-style("body-text-large");
+        margin: 0 0 32px 0;
+        max-width: 530px;
+
+        @include vp-mobile {
+            max-width: 400px;
+        }
+
+        @media (max-width: 600px) {}
+
+        @media (max-width: 550px) {
+            max-width: 350px;
+            text-align: center;
+        }
+    }
+
+    &__btn {
+        width: 220px;
+
+        &:focus-visible {
+            outline: auto;
+        }
+    }
+
+    .swiper-pagination {
+        margin: 0 0 24px 0;
+
+        &-bullet {
+            width: 20px;
+            height: 6px;
+            border-radius: 3px;
+            background: #666;
+            opacity: 1;
+            transition: background 0.3s, width 0.3s;
+            margin: 0 4px;
+
+            &-active {
+                background: #fff;
+            }
+        }
+    }
+}

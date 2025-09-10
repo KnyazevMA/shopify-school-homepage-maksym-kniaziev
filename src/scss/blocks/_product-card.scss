@@ -1,0 +1,44 @@
+.product-card {
+    outline: none;
+
+    &:focus-visible,
+    &:hover {
+        .product-card__title {
+            color: $color-gray;
+        }
+
+        .product-card__picture img {
+            opacity: 0.6;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        max-width: 312px;
+        aspect-ratio: 1 / 1;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 16px 0;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__title {
+        @include text-style("body-text-large");
+        margin: 0 0 8px 0;
+    }
+
+    &__price {
+        @include text-style("body-text-large");
+        margin: 0;
+        color: $color-gray;
+    }
+}

@@ -1,0 +1,120 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-black-08;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+
+    &--visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border-radius: 16px;
+        display: flex;
+        position: relative;
+        margin: 0 8px 0 8px;
+    }
+
+    &__content {
+        max-width: 519px;
+        width: 100%;
+        padding: 60px;
+        position: relative;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+
+        @media (max-width: 440px) {
+            padding: 60px 24px 60px 24px;
+        }
+
+        .modal--visible & {
+            transform: translateY(0);
+        }
+    }
+
+    &__title {
+        @include text-style("h1-desktop");
+        margin: 0 0 16px 0;
+        text-transform: uppercase;
+
+        @include vp-mobile {
+            @include text-style("h1-mobile")
+        }
+    }
+
+    &__text {
+        @include text-style("body-text-large");
+        margin: 0 0 48px 0;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 0 0 16px 0;
+    }
+
+    &__label {
+        @include text-style("body-text-large");
+    }
+
+    &__input {
+        @include text-style("body-text-large");
+        color: $color-gray;
+        border: 1px solid $color-stroke;
+        border-radius: 8px;
+        padding: 16px;
+    }
+
+    &__picture,
+    &__image {
+        width: 353px;
+        height: 538px;
+
+        @include vp-tablet {
+            display: none;
+        }
+    }
+
+    &__btn-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid $color-stroke;
+        background-color: $color-white;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        cursor: pointer;
+        padding: 0;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 1px;
+            background-color: $color-black;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+}

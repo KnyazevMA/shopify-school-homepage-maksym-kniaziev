@@ -1,0 +1,27 @@
+.main-nav {
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 32px;
+
+        @media (max-width: 600px) {
+            gap: 16px;
+        }
+
+        @include vp-mobile {
+            display: none;
+        }
+    }
+
+    &__link {
+        @include text-style("body-text-large");
+
+        &:hover,
+        &:focus-visible {
+            color: $color-gray;
+        }
+    }
+}

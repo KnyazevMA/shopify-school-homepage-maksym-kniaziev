@@ -1,0 +1,100 @@
+.dropdown-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__item {
+        background-color: $color-white;
+        border: 1px solid #EBEBEB;
+        padding: 24px;
+        max-width: 880px;
+
+        &--active {
+            .dropdown-list__btn {
+                margin: 0 0 24px 0;
+            }
+
+            .dropdown-list__content {
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .dropdown-list__icon::before {
+                transform: translate(-50%, -50%) rotate(0deg)
+            }
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        transition: margin 0.3s ease;
+        padding: 0;
+
+        &:focus-visible,
+        &:hover {
+            outline: none;
+            color: $color-gray;
+        }
+    }
+
+    &__title {
+        @include text-style("body-text-large");
+        margin: 0;
+    }
+
+    &__text {
+        max-width: 500px;
+    }
+
+    &__icon {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-black;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 1px;
+            background-color: $color-black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate((0deg));
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(90deg)
+        }
+    }
+
+    &__content {
+        @include text-style("body-text-large");
+        color: $color-gray;
+        margin: 0;
+        max-height: 0;
+        transform-origin: top;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease 0.1s;
+    }
+}
